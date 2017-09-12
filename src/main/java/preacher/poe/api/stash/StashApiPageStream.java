@@ -8,7 +8,18 @@ public class StashApiPageStream {
     private URI apiEndpointUri;
     private StashPage lastStashPage;
     
-    public StashApiPageStream(){
+    public static StashApiPageStream getStreamWidthLastPageId(String id){
+        StashApiPageStream newStream = new StashApiPageStream();
+        newStream.lastStashPage = new StashPage();
+        newStream.lastStashPage.next_change_id = id;
+        return newStream;
+    }
+    
+    public static StashApiPageStream getStream(){
+        return new StashApiPageStream();
+    }
+    
+    private StashApiPageStream(){
         try {
             this.apiEndpointUri = PoeEndpointGetter.getEndpointUri("public-stash-tabs");
         }catch(Exception e){
