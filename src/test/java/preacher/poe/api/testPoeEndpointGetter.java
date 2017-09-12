@@ -1,4 +1,4 @@
-package preacher.poe;
+package preacher.poe.api;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 
 import preacher.poe.api.PoeEndpointGetter;
 
-public class EndpointGetterTest {
+public class testPoeEndpointGetter {
     @Test
     void testGettingAnEndpoint() throws MalformedURLException, URISyntaxException {
         URI endpointUri = PoeEndpointGetter.getEndpointUri("test");

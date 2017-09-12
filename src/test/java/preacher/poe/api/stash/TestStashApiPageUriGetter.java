@@ -1,4 +1,4 @@
-package preacher.poe.stash;
+package preacher.poe.api.stash;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

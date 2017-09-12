@@ -13,6 +13,8 @@ public class Stash {
     @SerializedName("stashType")
     public String type;
     
+    public StashItem[] items;
+    
     @SerializedName("public")
     public boolean isPublic;
 }
