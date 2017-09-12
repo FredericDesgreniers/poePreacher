@@ -10,7 +10,7 @@ public class PoeEndpointGetter {
     
     public static URI getEndpointUri(String apiSectionName){
         try {
-            return new URL(new URL(BASE_ENDPOINT_URL), apiSectionName).toURI();
+            return tryToGetEndpointUri(apiSectionName);
         } catch (URISyntaxException e) {
             e.printStackTrace();
             throw new PoeEndpointGetterException("URI error");
@@ -18,5 +18,10 @@ public class PoeEndpointGetter {
             e.printStackTrace();
             throw new PoeEndpointGetterException("URL error");
         }
+    }
+    
+    public static URI tryToGetEndpointUri(String apiSectionName)
+        throws MalformedURLException, URISyntaxException {
+        return new URL(new URL(BASE_ENDPOINT_URL), apiSectionName).toURI();
     }
 }
